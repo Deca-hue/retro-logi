@@ -1,0 +1,104 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #3A0CA3;
+    color: #F72585;
+}
+
+.container {
+    width: 400px;
+    background: #10002B;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: #F72585;
+}
+
+.container h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    animation: flicker 2s infinite alternate;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 2px solid #3A0CA3;
+    border-radius: 8px;
+    background: transparent;
+    color: #F72585;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+.form-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #F72585;
+    pointer-events: none;
+    transition: 0.3s ease-in-out;
+    background: #10002B;
+    padding: 0 5px;
+}
+
+.form-group input:focus {
+    border-color: #F72585;
+    background-color: rgba(58, 12, 163, 0.2);
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 8px;
+    font-size: 0.8rem;
+    color: #F72585;
+}
+
+.hidden {
+    display: none;
+}
+
+.button {
+    background-color: #F72585;
+    color: #10002B;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    background-color: #3A0CA3;
+    color: #F72585;
+    box-shadow: 0px 0px 8px #F72585;
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
